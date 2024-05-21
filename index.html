@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="components">
+    <div class="text">
+      <h1>Learn to code by watching others</h1>
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+  </div>
+  
+  <div class="form-ui">
+      <div class="header">
+          <p><span class="bold-text">Try it free 7 days </span>then $20/mo. thereafter</p>
+      </div>
+      <form id="myForm" method="post" action="/">
+        
+        <div class="textInput">
+          <input name="fName" placeholder="First Name">
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+          <p class="error">First Name cannot be empty</p>
+        </div>
+
+        <div class="textInput">
+          <input placeholder="Last Name">
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+          <p class="error">Last Name cannot be empty</p>
+        </div>
+
+        <div class="textInput email">
+          <input placeholder="Email Address">
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+          <p class="error">Email Address cannot be empty</p>
+        </div>
+
+        <div class="textInput">
+          <input placeholder="Password">
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
+          <p class="error">Password cannot be empty</p>
+        </div>
+          
+          
+          
+          <button class="large-btn">CLAIM YOUR FREE TRIAL</button>
+          <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+      
+      </form>
+  </div>
+  </div>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Rana (2024)</a>.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", (event) => {
+
+      event.preventDefault();
+  
+    // Reset previous error styles
+    var inputs = document.querySelectorAll("input.error-border");
+    inputs.forEach(input => {
+      input.classList.remove("error-border");
+    });
+  
+    var svgs = document.querySelectorAll("input + svg");
+    svgs.forEach(svg => {
+      svg.style.visibility = "hidden";
+    });
+  
+    var msgs = document.querySelectorAll(".error");
+    msgs.forEach(msg => {
+      msg.style.display = "none";
+    });
+
+  // Check email input
+  
+      // event.preventDefault();
+      var input_div = document.getElementsByTagName("input");
+      var svgs = document.getElementsByTagName("svg");
+      var msgs = document.getElementsByClassName("error");
+      console.log(input_div);
+      for (let i = 0; i < input_div.length; i++) {
+        if (input_div[i].value === "") {
+          var currentPlaceholder = input_div[i].placeholder;
+          input_div[i].setAttribute("placeholder", "");
+          input_div[i].style.marginBottom = "5px";
+          input_div[i].classList.add("error-border");
+          msgs[i].style.display = "flex";
+          svgs[i].style.visibility = "visible";
+        } 
+      }
+
+      var emailInput = document.querySelector(".email input");
+      if (emailInput.value != "" && !emailInput.value.includes("@")) {
+        emailInput.value = "";
+        emailInput.setAttribute("placeholder", "email@example/com");
+        var emailMsg = document.querySelector(".email .error");
+        emailMsg.textContent = "Looks like this is not an email";
+        emailMsg.style.display = "flex";
+    
+        var emailSvg = document.querySelector(".email svg");
+        emailSvg.style.visibility = "visible";
+    
+        emailInput.classList.add("error-border");
+        
+      }
+      // var info = document.getElementsByClassName("email");
+      // var email_input_tag = info[0].getElementsByTagName("input");
+      // var svgs_email = document.getElementsByTagName("svg");
+      // var msgs_email = document.getElementsByClassName("error");
+      
+      // var email = email_input_tag[0];
+      // if (email.value != "" && !email.value.includes("@")) {
+      //   email.value = "";
+      //   email.setAttribute("placeholder", "email@example/com");
+      //   console.log(msgs_email[0])
+      //   email.classList.add("error-border");
+      //   msgs_email[0].style.display = "flex";
+      //   svgs_email[0].style.visibility = "visible";
+      //   msgs_email[0].textContent = "Looks like this is not an email";
+      // } 
+
+      msgs[i].style.display = "none";
+          svgs[i].style.visibility = "hidden";
+          input_div[i].classList.remove("error-border");
+  });
+  </script>
+</body>
+</html>

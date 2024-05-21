@@ -1,0 +1,190 @@
+.attribution a { color: hsl(228, 45%, 44%); }
+body {
+    background-image: url('images\\bg-intro-desktop.png');
+    /* width: 80%; /* Set the width of the block-level element */
+    margin: 100px 50px 40px 50px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    background-color: #FA7070;
+}
+
+
+.components {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.text {
+    flex: 2;
+    text-align: start;
+    margin: 0 30px;
+}
+
+footer {
+      position: relative;
+      margin-top: 10px;
+      bottom:0;
+    }
+
+    .attribution { 
+      
+      font-size: 11px; 
+      text-align: center; 
+    }
+.text h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white; 
+}
+
+.text p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white; 
+}
+.bold-text {
+    font-weight: 700;
+}
+
+.form-ui {
+    flex: 2;
+    width: 80%;
+}
+
+.header {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: white; 
+    background-color: hsl(248, 32%, 49%);
+    color: white;
+    padding: 15px 15px;
+    border-radius: 4px;
+    margin-bottom: 4%;
+    margin-top: 4%;
+    box-shadow: 0px 8px 5px hsl(248, 32%, 49%, 0.5);
+}
+form {
+    padding: 30px 30px;
+    background-color: white;
+    border: 0.5px solid white;
+    border-radius: 5px;
+    box-shadow: 0px 8px 5px hsl(249, 10%, 26%, 0.3) ;
+}
+
+input::placeholder {
+    color:  grey;
+    font-weight: 500;
+    font-size: 15px;
+}
+input {
+    border-radius: 4px;
+    border: 1px solid rgba(241, 241, 241);
+    text-align: left;
+    padding: 12px 17px;
+    width: calc(100% - 2px);
+    margin-bottom: 15px;
+    /* margin: 10px 10px; */
+
+    /*  */
+}
+
+input:focus {
+    outline: none;
+    font-weight: 600;
+    border-color:hsl(248, 32%, 49%);
+}
+
+input:valid {
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.large-btn {
+    text-align: center;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: hsl(154, 59%, 51%);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    box-shadow: 0px 6px 0px rgb(80, 141, 105);
+    margin-bottom: 20px;
+}
+
+form p {
+    color: hsl(246, 25%, 77%);
+    font-size: 12px;
+}
+form p span {
+    color: hsl(0, 100%, 74%) ;
+    font-weight: bold;
+}
+
+/* CSS styles for error messages */
+.error {
+    display: none;
+    justify-content: end;
+    color: hsl(0, 100%, 74%) ;
+    text-align: left;
+    font-size: 9px;
+    font-style: italic;
+    /* margin-bottom: 10px; */
+    /* visibility: hidden; */
+}
+
+.textInput {
+  position: relative;
+}
+
+.textInput svg {
+  visibility: hidden;
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+/* svg {
+  position: absolute;
+  transform: translateY(-50%);
+  fill: #999;
+  text-align: center;
+} */
+/* CSS styles for input fields with errors */
+.visible {
+  visibility:visible;
+}
+.error-border {
+    border: 1px solid red;
+}
+
+.error-border::placeholder {
+  color:  red;
+  font-weight: 500;
+  font-size: 15px;
+}
+@media  (max-width: 600px) {
+  
+    body {
+      margin: 100px 20px;
+    }
+    .components {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .text {
+        text-align: center;
+    }
+}
